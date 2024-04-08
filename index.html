@@ -102,7 +102,17 @@
 
           /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
           
-          
+	var canvas2 = document.getElementById('myCanvas2'); /*created variable for second canvas*/
+	var context2 = canvas2.getContext("2d"); /*created variable for second canvas context*/
+	
+	var imageData = context.getImageData (0, 0, 600, 500);/* this creates a variable to get the image data*/
+	var data = imageData.data;/* this gets the image data from the first canvas so it can be reflected onto the second one eventually*/
+	
+	for(var i = 0, n = data.length; i < n; i += 4) {
+          data[i] = 0;
+          data[i + 1] = 0;
+          }
+        context2.putImageData(imageData, 0, 0); /* this uses the data variable and sets red and green hues to 0 so that only the blue color will appear in the photo on the second canvas*/
           
           
         } // end of img.onload
