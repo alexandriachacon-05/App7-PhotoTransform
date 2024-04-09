@@ -14,7 +14,7 @@
  
   Authors in chronological order of contribution:
   Author 1: Timothy E. Riedel
-  Author 2: ?????????
+  Author 2: Alexandria Chacon
   
   References:
   http://docs.webplatform.org/wiki/concepts/programming/drawing_images_onto_canvas#Loading_the_image_programmatically
@@ -24,11 +24,10 @@
   http://stackoverflow.com/questions/11929099/html5-canvas-drawimage-ratio-bug-ios
   
   Brief Description of Goal of Code:
-  blah, blah, blah,
+  The goal of this code is to upload a photo to a canvas then use that same photo and only reflect the blue colors on a second canvas.
  
   Known Issues:
-  blah, blah, blah, blah
--->
+There are no known issues currently.-->
 
  <head>
   <meta charset="utf-8">
@@ -97,10 +96,6 @@
         
           drawImageIOSFix(context,img, 0, 0, img.naturalWidth, img.naturalHeight, 0, 0, 600, 500);
 
-          /*  +++++++++++++++ BEGIN IMAGE PROCESSING +++++++++++++++ */
-          /*  ++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-
-          /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
           
 	var canvas2 = document.getElementById('myCanvas2'); /*created variable for second canvas*/
 	var context2 = canvas2.getContext("2d"); /*created variable for second canvas context*/
@@ -144,23 +139,23 @@
       </div>
       <div id="messageDisplayArea"></div>
       
-      <canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
+      <canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>/* this creates the constraints of the canvas */
       <script> /* This script initiates the canvas and puts the text on the canvas "myCanvas" */
-        var canvas = document.getElementById('myCanvas');
-        var context = canvas.getContext("2d");
-        context.font = '20pt Calibri';
-        context.fillStyle = "black";
-        context.fillText("Original image will go here", 10, 20);
+        var canvas = document.getElementById('myCanvas');/* This creates a variable for the first canvas*/
+        var context = canvas.getContext("2d");/* This creates a variable for the first canvas context*/
+        context.font = '20pt Calibri';/* this sets the font and its size*/
+        context.fillStyle = "black";/* this sets the font color*/
+        context.fillText("Original image will go here", 10, 20);/*this creates the word content that will be shown in the box*/
 	
       </script>
 
-      <canvas id="myCanvas2" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
+      <canvas id="myCanvas2" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>/* this creates the constraints of the canvas */
       <script> /* This script initiates the canvas and puts the text on the canvas "myCanvas2" */
-        var canvas2 = document.getElementById('myCanvas2');
-        var context2 = canvas2.getContext("2d");
-        context2.font = '20pt Calibri';
-        context2.fillStyle = "black";
-        context2.fillText("Blue image will go here", 10, 20);
+        var canvas2 = document.getElementById('myCanvas2');/* This creates a variable for the second canvas*/
+        var context2 = canvas2.getContext("2d"); /* This creates a variable for the second canvas context*/
+        context2.font = '20pt Calibri'; /* this sets the font and its size*/
+        context2.fillStyle = "black"; /* this sets the font color*/
+        context2.fillText("Blue image will go here", 10, 20); /*this creates the word content that will be shown in the box*/
 
       </script>
 
